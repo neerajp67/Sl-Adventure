@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Booking | SLA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- bootstarp -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- favicon.ico -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light-transprent container">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" width="90" height="60" class="d-inline-block align-center" alt="" href="index.html">
+        </a>
+        <form>
+            <button class="btn btn-outline-success ml-2" type="button" data-toggle="modal"
+                data-target="#loginModal">Sign
+                In</button>
+            <div id="loginModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"> &times;</button>
+                        </div>
+                        <div class="row loginpage">
+                            <div class="col-md-12">
+                                <h2>Sign In</h2>
+                                <a href="#" class="social-button" id="facebook-connect"> <span>Sign In with
+                                        Facebook</span></a>
+                                <a href="#" class="social-button" id="google-connect"> <span>Sign In with
+                                        Google</span></a>
+                                <a href="#" class="social-button" id="twitter-connect"> <span>Sign In with
+                                        Twitter</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </nav>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbar-primary bg-success main-nav ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mx-auto ">
+                <li class="nav-item mx-2">
+                    <a class="nav-link " href="index.html">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="tourPackages.html">Tour Packages</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="booking.html">Booking</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="blog.html">Blogs</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="enquiry.html">Enquiry</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- end nav bar -->
+    <section id="booking">
+        <h1>ACCOMMODATION & TRAVEL BOOKING</h1>
+        <div class="modal-body container">
+            <form action="reservation.php" method="post">
+                <div class="booking-tour">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="visitor_name" placeholder="Enter your name"
+                        pattern=[A-Z\sa-z]{3,20} required>
+                </div>
+                <div class="booking-tour">
+                    <label for="email">Your E-mail</label>
+                    <input type="email" id="email" name="visitor_email" placeholder="example@email.com" required>
+                </div>
+                <div class="booking-tour">
+                    <label for="phone">Your Phone</label>
+                    <input type="tel" id="phone" name="visitor_phone" placeholder="123-1234-123"
+                        pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+                </div>
+                <hr>
+                <!-- <div class="booking-tour inlined">
+                    <label for="Guest">Number of Guests</label>
+                    <input type="number" id="adult" name="total_guest" placeholder="1" min="1" required>
+                </div> -->
+                <div class="booking-tour-packages">
+                    <label for="tour-selection" class="tour_selection">Select a Service</label>
+                    <select id="tour-selection" name="tour_preference" required>
+                        <option value="">Choose a service from the List</option>
+                        <option value="#PKG-18">Accommodation</option>
+                        <option value="#PKG-17">Travel</option>
+                    </select>
+                </div>
+                <div class="booking-tour">
+                    <label for="text">Location</label>
+                    <input type="location" id="location" name="accommodation_location" placeholder="example; Munsyari"
+                        required>
+                </div>
+                <div class="booking-tour personCount">
+                    <label for="male">Male </label>
+                    <input type="number" id="male" name="male" placeholder="Number of male tourist" required>
+                </div>
+                <div class="booking-tour personCount">
+                    <label for="male">Female </label>
+                    <input type="number" id="male" name="male" placeholder="Number of female tourist" required>
+                </div>
+                <div class="booking-tour personCount">
+                    <label for="male">Kids</label>
+                    <input type="number" id="male" name="male" placeholder="Number of kids">
+                </div>
+                <div class="booking-tour inlined">
+                    <label for="checkin-date">Check-in Date</label>
+                    <input type="date" id="checkin-date" name="checkin" required>
+                </div>
+                <div class="booking-tour inlined">
+                    <label for="checkout-date">Check-out Date</label>
+                    <input type="date" id="checkout-date" name="checkout" required>
+                </div>
+
+                <hr>
+                <div class="booking-tour">
+                    <label for="message">Anything Else ?</label>
+                    <textarea id="message" name="visitor_message"
+                        placeholder="Tell us anything else that might be important.."></textarea>
+                </div>
+                <button type="submit" class="btn bg-success text-white mx-auto">Confirm Booking</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+
+
+    </section>
+    <!-- Footer -->
+    <section id="footer" class="bg-success">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="about.html"><i class="fa fa-angle-double-right"></i>About Us</a></li>
+                        <li><a href="contact.html"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#loginModal"><i
+                                    class="fa fa-angle-double-right"></i>Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Useful links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="tourPackages.html"><i class="fa fa-angle-double-right"></i>Tour Packages</a></li>
+                        <li><a href="services.html"><i class="fa fa-angle-double-right"></i>Services</a></li>
+                        <li><a href="blog.html"><i class="fa fa-angle-double-right"></i>Blogs</a></li>
+                        <li><a href="enquiry.html"><i class="fa fa-angle-double-right"></i>Enquiry</a></li>
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Booking</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><i class="fa fa-map-marker"></i>SLADVENTURE Address Here</li>
+                        <li><i class="fa fa-envelope"></i>spiritluminaries@gmail.com</li>
+                        <li><i class="fa fa-phone"></i>+91 7579277488, +91 7579299249, +91 8979197592</li>
+                        <li><i class="fa fa-whatsapp"></i>+91 9897632863 </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a
+                                href="https://www.facebook.com/Spirit-luminaries-Adventure-332150387208598"
+                                target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCKo5G1hW7aiIVBv2n4DhBHg"
+                                target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/spirit_luminaries_adventure/"
+                                target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="#!" target="_blank"><i class="fa fa-envelope"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+            <div class="text-center text-white">
+                <p><u><a href="#">SPIRIT LUMINARIES ADVENTURE</a></u> is a group of
+                    youth from the Himalayas eager to build restful and very interactive tourism in
+                    rural Himalayan villages..</p>
+            </div>
+            <p class="h6 text-white">© All right Reversed.<a class="ml-2" href="#!" target="_blank">Fukset</a><span
+                    style="float: right;"><a class=" mr-2" href="privacyPolicy.html">Privacy Policy</a>|<a class=" ml-2"
+                        href="termsOfUse.html">Terms of Use</a></span>
+            </p>
+        </div>
+    </section>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="js/main.js"></script>
+    <!-- bootstarp js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- end bootstarp -->
+    <!-- jquery -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- aos -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script>
+        AOS.init({
+            offset: 100,
+            duration: 1000,
+        });
+    </script> -->
+</body>
+
+</html>
